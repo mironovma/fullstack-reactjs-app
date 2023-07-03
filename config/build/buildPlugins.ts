@@ -24,6 +24,6 @@ export function buildPlugins({
          * Анализирует размер бандла
          * { openAnalyzer: false }
          */
-        new BundleAnalyzerPlugin(),
+        new BundleAnalyzerPlugin({ openAnalyzer: false }),
     ];
 }
