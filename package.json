@@ -7,9 +7,11 @@
         "start": "webpack serve --env port=3000",
         "build:prod": "webpack --env mode=production",
         "build:dev": "webpack --env mode=development",
-        "unit": "jest --config ./config/jest/jest.config.ts",
+        "test:unit": "jest --config ./config/jest/jest.config.ts",
+        "test:ui": "npx loki test",
+        "test:ui:ok": "npx loki approve",
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
-        "build-storybook": "storybook build -c ./config/storybook"
+        "storybook:build": "storybook build -c ./config/storybook"
     },
     "keywords": [],
     "author": "",
@@ -25,7 +27,7 @@
         "@storybook/addon-styling": "^1.3.2",
         "@storybook/blocks": "^7.0.24",
         "@storybook/preset-scss": "^1.0.3",
-        "@storybook/react": "^7.0.24",
+        "@storybook/react": "^6.5.16",
         "@storybook/react-webpack5": "^7.0.24",
         "@storybook/testing-library": "^0.0.14-next.2",
         "@svgr/webpack": "^6.2.1",
@@ -45,6 +47,7 @@
         "html-webpack-plugin": "^5.5.0",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^27.5.1",
+        "loki": "^0.32.0",
         "mini-css-extract-plugin": "^2.5.3",
         "sass": "^1.63.6",
         "sass-loader": "^12.6.0",
@@ -68,5 +71,20 @@
         "react-dom": "^17.0.2",
         "react-i18next": "^11.15.5",
         "react-router-dom": "^6.2.1"
+    },
+    "loki": {
+        "configurations": {
+            "chrome.laptop": {
+                "target": "chrome.app",
+                "width": 1366,
+                "height": 768,
+                "deviceScaleFactor": 1,
+                "mobile": false
+            },
+            "chrome.iphone7": {
+                "target": "chrome.app",
+                "preset": "iPhone 7"
+            }
+        }
     }
 }
