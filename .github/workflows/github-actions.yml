@@ -1,12 +1,11 @@
 name: Building And Testing
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
     push:
         branches: [master]
     pull_request:
         branches: [master]
 jobs:
-    pipline:
+    pipeline:
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -26,7 +25,3 @@ jobs:
               run: npm run test:unit
             - name: Build storybook
               run: npm run storybook:build
-            # Т.к. loki не дружит с 7 версией сторибука, я откатывал до 6-ой @storybook/react. Теперь из-за разных версий аддонов падает сам сторибук.
-            # Вернул к 7-ой версии, но теперь скриншотные тесты отключил.
-            # - name: Screenshot testing
-            #   run: npm run test:ui:ci
