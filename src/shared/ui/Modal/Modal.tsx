@@ -42,7 +42,6 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
     useEffect(() => {
         if (isOpen) {
             window.addEventListener("keydown", onKeyDown);
-            console.log(isOpen);
         }
         return () => {
             clearTimeout(timerRef.current);
