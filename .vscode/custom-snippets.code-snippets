@@ -20,5 +20,17 @@
             "}"
         ],
         "description": "Создать React-компонент по умолчанию. Импортируется scss-модуль и функция для работы с классами classNames."
+    },
+    "Create template for unit test": {
+        "scope": "typescript, typescriptreact",
+        "prefix": "ts",
+        "body": [
+            "describe(\"${TM_FILENAME_BASE}\", () => {",
+            "   test(\"\", () => {",
+            "       ",
+            "   });",
+            "});"
+        ],
+        "description": "Создать шаблон для тестов"
     }
 }

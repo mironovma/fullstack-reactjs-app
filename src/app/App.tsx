@@ -3,8 +3,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/routes";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
-import { Suspense, useState } from "react";
-import { Modal } from "shared/ui/Modal/Modal";
+import { Suspense } from "react";
 
 export const App = () => {
     const { theme } = useTheme();
