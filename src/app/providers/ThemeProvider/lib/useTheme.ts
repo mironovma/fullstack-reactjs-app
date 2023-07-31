@@ -21,6 +21,9 @@ export function useTheme(): UseThemeResult {
 
     document.body.classList.add(theme);
 
+    // if (!document.body.classList.contains(/app_.*_theme/gm))
+
+
     return {
         theme,
         toggleTheme,

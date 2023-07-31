@@ -9,5 +9,7 @@
     "Короткий язык": "En",
     "Главная": "Main page",
     "О нас": "About us",
-    "Войти": "Log in"
+    "Войти": "Log in",
+    "Введите логин": "Enter login",
+    "Введите пароль": "Enter password"
 }

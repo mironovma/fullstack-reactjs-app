@@ -3,6 +3,7 @@
         "scope": "typescript, typescriptreact",
         "prefix": "rc",
         "body": [
+            "import { useTranslation } from \"react-i18next\";",
             "import { classNames } from 'shared/lib/classNames/classNames';",
             "import styles from './${TM_FILENAME_BASE}.module.scss';",
             "",
@@ -11,6 +12,7 @@
             "}",
             "",
             "export const ${TM_FILENAME_BASE} = ({className}: ${TM_FILENAME_BASE}Props) => {",
+            "   const { t } = useTranslation();",
             "",
             "   return (",
             "       <div className={classNames(styles.${TM_FILENAME_BASE}, {}, [className])}>",
