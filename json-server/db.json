@@ -9,7 +9,7 @@
         {
             "id": 1,
             "username": "admin",
-            "password": "123456789"
+            "password": "123"
         }
     ],
     "profile": { "name": "typicode" }

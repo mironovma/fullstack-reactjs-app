@@ -94,6 +94,14 @@ export const SquareSizeXl: Story = {
     },
 };
 
+export const Disabled: Story = {
+    args: {
+        ...Default.args,
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        disabled: true,
+    },
+};
+
 /**
  * На самом деле под каждое состояние нет необходимости писать
  * сторис, т.к. все пропсы у нас передаются в интерфейс сторибука.

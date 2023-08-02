@@ -11,5 +11,7 @@
     "О нас": "About us",
     "Войти": "Log in",
     "Введите логин": "Enter login",
-    "Введите пароль": "Enter password"
+    "Введите пароль": "Enter password",
+    "Форма авторизации": "Auth from",
+    "Неправильный логин или пароль": "Incorrect login or password"
 }
