@@ -75,3 +75,4 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
         </div>
     );
 });
+export { Button };
