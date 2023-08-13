@@ -12,5 +12,14 @@
             "password": "123"
         }
     ],
-    "profile": { "name": "typicode" }
+    "profile": {
+        "firstname": "Максим",
+        "lastname": "Миронов",
+        "age": 25,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Tula",
+        "username": "admin",
+        "avatar": "https://img.freepik.com/premium-vector/avatar-of-a-man-with-beard-office-worker-wearing-glasses-it-developer-or-engineer-programmer_277909-144.jpg"
+    }
 }

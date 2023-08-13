@@ -1,27 +1,64 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import styles from "./Sidebar.module.scss";
-import { useState } from "react";
+import { memo, useMemo, useState } from "react";
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import { LanguageSwitcher } from "shared/ui/LanguageSwitcher/LanguageSwitcher";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
-import HomeIcon from "shared/assets/icons/home.svg";
-import AboutIcon from "shared/assets/icons/about-us.svg";
-import { useTranslation } from "react-i18next";
+
+import { SidebarItem } from "../SidebarItem/SidebarItem";
+import { SidebarItemsList } from "../../model/Items";
 
 interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
-
-    const { t } = useTranslation();
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
+
+    /**
+     * В каких случаях перерендеривается элемент:
+     * 1) изменилось состояние (стейт)
+     * 2) изменился хотя бы 1 пропс
+     * 3) перерисовался родитель (этот пунтк как раз можно
+     * предотвратить мемоизацией, как ниже)
+     *
+     * Ссылки у нас постоянны и их нет нужды перерисовывать.
+     * Каждый рендер тратит мощности нашего компьютера: процессора и видеокарты.
+     * А мемо лишь тратить какое-то кол-во памяти. Памяти у всех современных
+     * устройств большое, а цпу не у всех.
+     * Чтобы приложение быстро работало, нужно мемоизировать такие компоненты.
+     *
+     * Но не все нужно оборачивать в мемо. Например, у элементов, у которых есть
+     * children, большая вложенная струкура, занимает очень много памяти. И хранить
+     * такие компоненты дорого.
+     */
+    const itemList = useMemo(
+        () =>
+            SidebarItemsList.map((item) => (
+                <SidebarItem
+                    key={item.path}
+                    item={item}
+                    collapsed={collapsed}
+                />
+            )),
+        [collapsed]
+    );
+    /**
+     * См. SidebarItem
+     * Этот компонент полностью обернут в memo.
+     *
+     * Два варианта представлено, но проще и лучше
+     * сразу в файле самого компонента обернуть его в мемо
+     * const NameComponent = memo(() => {...});
+     *
+     * Хотя далее посмотрел. И тут в мемо обернуто и сам компонент.
+     * При дебаге разницы нет, если оставить в мемо сам компонент.
+     * Хз зачем, но сделал, как в уроке.
+     */
 
     return (
         <div
@@ -42,33 +79,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
             >
                 {collapsed ? ">" : "<"}
             </Button>
-            <div className={styles.items}>
-                <div>
-                    <AppLink
-                        className={styles.item}
-                        theme={AppLinkTheme.SECONDARY}
-                        to={RoutePath.main}
-                    >
-                        <HomeIcon className={styles.icon} />
-                        <span className={styles.link}>{t("Главная")}</span>
-                    </AppLink>
-                </div>
 
-                <div>
-                    <AppLink
-                        className={styles.item}
-                        theme={AppLinkTheme.SECONDARY}
-                        to={RoutePath.about}
-                    >
-                        <AboutIcon className={styles.icon} />
-                        <span className={styles.link}>{t("О нас")}</span>
-                    </AppLink>
-                </div>
-            </div>
+            <div className={styles.items}>{itemList}</div>
+
             <div className={styles.switchers}>
                 <ThemeSwitcher />
                 <LanguageSwitcher short={collapsed} className={styles.lang} />
             </div>
         </div>
     );
-};
+});

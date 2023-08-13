@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import styles from "./Text.module.scss";
-import { FunctionComponent } from "react";
+import { ReactNode, memo } from "react";
 
 export enum TextTheme {
     PRIMARY = "primary",
@@ -19,15 +19,17 @@ interface TextProps {
     text?: string;
     theme?: TextTheme;
     size?: TextSize;
+    children?: ReactNode;
 }
 
-export const Text: FunctionComponent<TextProps> = ({
-    className,
-    title,
-    text,
-    theme = TextTheme.PRIMARY,
-    size = TextSize.M,
-}) => {
+export const Text = memo((props: TextProps) => {
+    const {
+        className,
+        title,
+        text,
+        theme = TextTheme.PRIMARY,
+        size = TextSize.M,
+    } = props;
     return (
         <div
             className={classNames(styles.Text, { [styles[theme]]: true }, [
@@ -39,4 +41,4 @@ export const Text: FunctionComponent<TextProps> = ({
             {text && <p className={styles.text}>{text}</p>}
         </div>
     );
-};
+});
