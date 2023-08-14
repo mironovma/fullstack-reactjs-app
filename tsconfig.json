@@ -13,7 +13,9 @@
             "*": ["./src/*"]
         },
         "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        // Строгий режим для TS
+        "strict": true
     },
     "ts-node": {
         "compilerOptions": {
