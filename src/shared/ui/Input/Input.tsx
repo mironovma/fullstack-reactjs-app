@@ -1,10 +1,4 @@
-import {
-    FunctionComponent,
-    InputHTMLAttributes,
-    memo,
-    useEffect,
-    useRef,
-} from "react";
+import { InputHTMLAttributes, memo, useEffect, useRef } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import styles from "./Input.module.scss";
 
@@ -20,7 +14,7 @@ interface InputProps extends HTMLInputProps {
     onChange?: (value: string) => void;
 }
 
-export const Input: FunctionComponent<InputProps> = memo((props) => {
+export const Input = memo((props: InputProps) => {
     const {
         className,
         value,
@@ -30,7 +24,7 @@ export const Input: FunctionComponent<InputProps> = memo((props) => {
         ...otherProps
     } = props;
 
-    const ref = useRef<HTMLInputElement>();
+    const ref = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         if (autofocus) {

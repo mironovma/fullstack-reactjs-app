@@ -12,6 +12,6 @@ import { getCounter } from "../getCounter/getCounter";
 
 export const getCounterValue = createSelector(
     getCounter,
-    (counter) => counter.value
+    (counter) => counter?.value
     // (state) => state.value
 );

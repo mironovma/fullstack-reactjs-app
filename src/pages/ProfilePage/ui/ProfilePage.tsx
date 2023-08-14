@@ -4,7 +4,6 @@ import {
     profileReducer,
 } from "entities/Profile";
 import { FunctionComponent, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
     DynamicModuleLoader,
@@ -21,7 +20,6 @@ interface ProfilePageProps {
 }
 
 const ProfilePage: FunctionComponent<ProfilePageProps> = ({ className }) => {
-    const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
     useEffect(() => {

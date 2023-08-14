@@ -14,7 +14,7 @@ import { LoginSchema } from "features/AuthByUsername";
 import { To, NavigateOptions } from "react-router-dom";
 
 export interface StateSchema {
-    counter?: CounterSchema;
+    counter: CounterSchema;
     user: UserSchema;
 
     // Асинхронные редюсеры
@@ -41,7 +41,7 @@ export interface ReduxStoreWithManager extends ToolkitStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate: (to: To, options?: NavigateOptions) => void;
+    navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export interface ThunkConfig<T> {

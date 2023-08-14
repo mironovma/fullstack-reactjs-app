@@ -15,17 +15,16 @@ export function useTheme(): UseThemeResult {
 
     const toggleTheme = () => {
         const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-        setTheme(newTheme);
+        setTheme?.(newTheme);
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
-    document.body.classList.add(theme);
+    document.body.classList.add(theme || "");
 
     // if (!document.body.classList.contains(/app_.*_theme/gm))
 
-
     return {
-        theme,
+        theme: theme || Theme.DARK,
         toggleTheme,
     };
 }

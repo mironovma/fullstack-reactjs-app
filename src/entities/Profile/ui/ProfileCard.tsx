@@ -9,7 +9,6 @@ import { getProfileIsLoading } from "../model/selectors/getProfileIsLoading/getP
 import { Text } from "shared/ui/Text/Text";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
-import { Loader } from "shared/ui/Loader/Loader";
 
 interface ProfileCardProps {
     className?: string;
@@ -20,10 +19,6 @@ export const ProfileCard = ({ className }: ProfileCardProps) => {
     const data = useSelector(getProfileData);
     const erorr = useSelector(getProfileErorr);
     const isLoading = useSelector(getProfileIsLoading);
-
-    // if (isLoading) {
-    //     return <Loader />;
-    // }
 
     return (
         <div className={classNames(styles.ProfileCard, {}, [className])}>
