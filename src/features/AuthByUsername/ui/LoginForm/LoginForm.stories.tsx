@@ -7,7 +7,14 @@ import { Theme } from "app/providers/ThemeProvider";
 const meta: Meta<typeof LoginForm> = {
     title: "features/LoginForm",
     component: LoginForm,
-    decorators: [StoreDecorator({ loginForm: { username: "", password: "" } })],
+    decorators: [
+        StoreDecorator({
+            loginForm: {
+                username: "",
+                password: "",
+            },
+        }),
+    ],
     args: {},
 };
 
