@@ -12,7 +12,7 @@ interface SelectProps {
     label?: string;
     options?: SelectOption[];
     value?: string;
-    readonly: boolean | undefined;
+    readonly?: boolean | undefined;
     // onChange?: (value: string) => void;
     onChange?: ChangeEventHandler<HTMLSelectElement>;
 }

@@ -14,5 +14,10 @@
     "Укажите валюту": "Choose your currency",
     "Ваша валюта": "Your currency",
     "Укажите страну": "Choose your country",
-    "Ваша страна": "Your country"
+    "Ваша страна": "Your country",
+    "Серверная ошибка при сохранении": "Server error",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректный регион": "Incorrect region",
+    "Имя и фамилия обязательны": "Firstname and lastname are required",
+    "Данные не указаны": "No data"
 }
