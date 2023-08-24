@@ -53,9 +53,10 @@ const ProfilePage: FunctionComponent<ProfilePageProps> = ({ className }) => {
         ),
         [ValidateProfileError.NO_DATA]: t("Данные не указаны"),
     };
-
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== "storybook") {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstname = useCallback(

@@ -35,7 +35,7 @@ export const CurrencySelect = memo(
             <Select
                 className={classNames("", {}, [className])}
                 label={t("Укажите валюту")}
-                options={...currencyOptions}
+                options={currencyOptions}
                 value={value}
                 readonly={readonly}
                 // @ts-ignore
