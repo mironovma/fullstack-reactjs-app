@@ -6,7 +6,7 @@ import { LanguageSwitcher } from "shared/ui/LanguageSwitcher/LanguageSwitcher";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 
 import { SidebarItem } from "../SidebarItem/SidebarItem";
-import { SidebarItemsList } from "../../model/Items";
+import { SidebarItemsList } from "widgets/Sidebar/model/Items";
 
 interface SidebarProps {
     className?: string;

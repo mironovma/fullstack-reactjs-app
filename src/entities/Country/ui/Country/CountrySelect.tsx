@@ -34,7 +34,7 @@ export const CountrySelect = memo(
         return (
             <Select
                 className={classNames("", {}, [className])}
-                label={t("Укажите страну")}
+                // label={t("Укажите страну")}
                 options={countryOptions}
                 value={value}
                 readonly={readonly}

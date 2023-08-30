@@ -8,7 +8,7 @@ import { RoutePath } from "shared/config/routeConfig/routeConfig";
  * https://reactrouter.com/en/main
  */
 
-export function RequireAuth({ children }: { children: JSX.Element }) {
+export const RequireAuth = ({ children }: { children: JSX.Element }) => {
     const auth = useSelector(getUserAuthData);
     const location = useLocation();
 
@@ -19,4 +19,4 @@ export function RequireAuth({ children }: { children: JSX.Element }) {
     }
 
     return children;
-}
+};

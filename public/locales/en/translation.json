@@ -15,5 +15,6 @@
     "Введите логин": "Enter login",
     "Введите пароль": "Enter password",
     "Форма авторизации": "Auth from",
-    "Неправильный логин или пароль": "Incorrect login or password"
+    "Неправильный логин или пароль": "Incorrect login or password",
+    "Статьи": "Articles"
 }
