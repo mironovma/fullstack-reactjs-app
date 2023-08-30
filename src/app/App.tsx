@@ -7,7 +7,7 @@ import { Sidebar } from "widgets/Sidebar";
 import { useTheme } from "./providers/ThemeProvider";
 import { AppRouter } from "./providers/routes";
 
-export const App = () => {
+function App() {
     const { theme } = useTheme();
     const dispatch = useDispatch();
 
@@ -28,4 +28,6 @@ export const App = () => {
             </Suspense>
         </div>
     );
-};
+}
+
+export default App;

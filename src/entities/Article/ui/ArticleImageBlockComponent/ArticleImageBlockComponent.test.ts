@@ -1,0 +1,5 @@
+describe("ArticleImageBlockComponent", () => {
+    test("", () => {
+        expect();
+    });
+});
