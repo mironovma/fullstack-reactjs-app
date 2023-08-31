@@ -1,5 +1,0 @@
-describe("ArticleTextBlockComponent", () => {
-    test("", () => {
-        expect();
-    });
-});

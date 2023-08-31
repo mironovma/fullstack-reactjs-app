@@ -1,9 +1,9 @@
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
-import HomeIcon from "shared/assets/icons/home.svg";
 import AboutIcon from "shared/assets/icons/about-us.svg";
-import ProfileIcon from "shared/assets/icons/profile.svg";
 import ArticleIcon from "shared/assets/icons/article.svg";
+import HomeIcon from "shared/assets/icons/home.svg";
+import ProfileIcon from "shared/assets/icons/profile.svg";
 
 export interface SidebarItemType {
     path: string;
