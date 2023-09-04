@@ -48,3 +48,11 @@ export const Error: Story = {
         theme: TextTheme.ERROR,
     },
 };
+
+export const SizeL: Story = {
+    args: {
+        title: "This is header",
+        text: "This is paragraph. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime reiciendis explicabo aut minus consequuntur voluptatibus sed commodi cumque consequatur dignissimos doloremque nostrum excepturi ipsum et ullam quo, quam nulla facere?",
+        size: TextSize.L,
+    },
+};

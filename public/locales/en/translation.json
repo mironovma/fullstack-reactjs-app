@@ -16,5 +16,6 @@
     "Введите пароль": "Enter password",
     "Форма авторизации": "Auth from",
     "Неправильный логин или пароль": "Incorrect login or password",
-    "Статьи": "Articles"
+    "Статьи": "Articles",
+    "Копировать": "Copy"
 }

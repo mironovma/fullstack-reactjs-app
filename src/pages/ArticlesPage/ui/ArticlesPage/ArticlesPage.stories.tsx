@@ -4,7 +4,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 
 const meta = {
-    title: "shared/ArticlesPage",
+    title: "pages/ArticlesPage",
     component: ArticlesPage,
     args: {},
 } satisfies Meta<typeof ArticlesPage>;
