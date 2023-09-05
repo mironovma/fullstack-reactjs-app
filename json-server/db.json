@@ -91,13 +91,15 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "role": "ADMIN"
+            "role": "ADMIN",
+            "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/master/w_2560%2Cc_limit/security_hacker_names.jpg"
         },
         {
             "id": "2",
             "username": "user",
             "password": "456",
-            "role": "USER"
+            "role": "USER",
+            "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/master/w_2560%2Cc_limit/security_hacker_names.jpg"
         }
     ],
     "profile": {
