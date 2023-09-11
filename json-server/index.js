@@ -47,9 +47,12 @@ server.post("/login", (req, res) => {
 // Проверяем авторизован ли пользовтаель по заголовкам
 // просто есть ли заголовок authorization или нет
 server.use((req, res, next) => {
-    if (!req.headers.authorization) {
-        return res.status(403).json({ message: "AUTH ERROR" });
-    }
+    /**
+     * Закомментировал заголовки, т.к. запрос не подставляет headers authorization
+     */
+    // if (!req.headers.authorization) {
+    //     return res.status(403).json({ message: "AUTH ERROR" });
+    // }
 
     next();
 });

@@ -1,3 +1,5 @@
+import { Country } from "entities/Country";
+import { Currency } from "entities/Currency";
 import {
     ProfileCard,
     ValidateProfileError,
@@ -10,19 +12,19 @@ import {
     profileActions,
     profileReducer,
 } from "entities/Profile";
-import { FunctionComponent, useCallback, useEffect } from "react";
+import { FunctionComponent, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
     DynamicModuleLoader,
     ReducerList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
-import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
-import { Currency } from "entities/Currency";
-import { Country } from "entities/Country";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 import { Text, TextTheme } from "shared/ui/Text/Text";
-import { useTranslation } from "react-i18next";
+import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const reducers: ReducerList = {
     profile: profileReducer,
@@ -42,6 +44,9 @@ const ProfilePage: FunctionComponent<ProfilePageProps> = ({ className }) => {
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
 
+    // Достаем id профиля
+    const { id } = useParams<{ id: string }>();
+
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t(
             "Серверная ошибка при сохранении"
@@ -53,11 +58,18 @@ const ProfilePage: FunctionComponent<ProfilePageProps> = ({ className }) => {
         ),
         [ValidateProfileError.NO_DATA]: t("Данные не указаны"),
     };
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
-            dispatch(fetchProfileData());
+    // Теперь с кастомным хуком + теперь можем получать разные профили по id:
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
+    // Было:
+    // useEffect(() => {
+    //     if (__PROJECT__ !== "storybook") {
+    // dispatch(fetchProfileData());
+    //     }
+    // }, [dispatch]);
 
     const onChangeFirstname = useCallback(
         (value?: string) => {

@@ -18,5 +18,7 @@
     "Неправильный логин или пароль": "Incorrect login or password",
     "Статьи": "Articles",
     "Копировать": "Copy",
-    "Комментарии отсутствуют": "There is no comments yet"
+    "Комментарии отсутствуют": "There is no comments yet",
+    "Введите комментарий": "Enter comment",
+    "Отправить": "Send"
 }
