@@ -4,7 +4,8 @@ import { AddCommentForm } from "features/addCommentForm";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
     DynamicModuleLoader,
@@ -12,6 +13,7 @@ import {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
+import { Button } from "shared/ui/Button/Button";
 import { Text } from "shared/ui/Text/Text";
 import {
     // getArticleCommentsError,
@@ -35,7 +37,10 @@ const reducers: ReducerList = {
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation("article-details");
+
     const { id } = useParams<{ id: string }>();
+
+    const navigate = useNavigate();
 
     const dispatch = useAppDispatch();
 
@@ -50,6 +55,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         },
         [dispatch]
     );
+
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles);
+    }, [navigate]);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -74,6 +83,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     className,
                 ])}
             >
+                <Button onClick={onBackToList}>{t("Назад")}</Button>
                 <ArticleDetails id={id} />
                 <Text
                     className={styles.commentTitle}

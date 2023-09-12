@@ -21,6 +21,7 @@ const meta = {
                     subtittle: "Subtittle",
                     createdAt: "2023.08.04",
                     views: 5447,
+                    user: { id: "1", username: "admin" },
                     type: [ArticleType.IT],
                     img: "https://lh3.googleusercontent.com/rQiOXCi1evWhjOOOCaoM5hWmE3RUMbKqaqcV70Jf0VCAzH5pkAUsYcvRqFMzdNjg8UsJP9P0f9VYQ32eppTtTHo8YQ=w640-h400-e365-rj-sc0x00ffffff",
                     blocks: [

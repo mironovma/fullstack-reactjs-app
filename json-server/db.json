@@ -1,161 +1,160 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "json-server 1",
-      "author": "typicode"
-    },
-    {
-      "id": "2",
-      "title": "json-server 2",
-      "author": "typicode"
-    },
-    {
-      "id": "3",
-      "title": "json-server 3",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "some comment",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "text": "some comment 2",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "3",
-      "text": "some comment 3",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Hello world!",
-      "id": "aX_876o"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Комментарий к статье",
-      "id": "dK2wbLn"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Хорошая статья! ",
-      "id": "gE3x2iy"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Что думаете по поводу этой темы? Полностью ли раскрыта тема? А вы любите JavaScript? Мое мнение, например, ... Длинный текст для просмотра как будет он отображаться.",
-      "id": "JMeg5Xb"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Всем привет!",
-      "id": "bxnNLb4"
-    }
-  ],
-  "articles": [
-    {
-      "id": "1",
-      "title": "JavaScript News",
-      "subtittle": "Что нового в JS за 2023 год?",
-      "img": "https://lh3.googleusercontent.com/rQiOXCi1evWhjOOOCaoM5hWmE3RUMbKqaqcV70Jf0VCAzH5pkAUsYcvRqFMzdNjg8UsJP9P0f9VYQ32eppTtTHo8YQ=w640-h400-e365-rj-sc0x00ffffff",
-      "views": 2566,
-      "createdAt": "30.08.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    "posts": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Реактивность — это то, как системы реагируют на обновление данных. Существуют разные типы реактивности, но в рамках этой статьи, реактивность — это когда мы что-то делаем в ответ на изменение данных.",
-            "Мы работаем с большим количеством JS на сайтах и в веб-приложениях, поскольку браузер — это полностью асинхронная среда. Мы должны реагировать на действия пользователя, взаимодействовать с сервером, отправлять отчеты, мониторить производительность и т.д. Это включает в себя обновление UI, сетевые запросы, изменения навигации и URL в браузере, что делает каскадное обновление данных ключевым аспектом веб-разработки.",
-            "Реактивность, обычно, ассоциируется с фреймворками, но можно многому научиться, реализуя реактивность на чистом JS. Мы можем смешивать и играть с этими паттернами для лучшей обработки обновления данных."
-          ]
+            "id": "1",
+            "title": "json-server 1",
+            "author": "typicode"
         },
         {
-          "id": "2",
-          "type": "CODE",
-          "code": "import { memo } from \"react\";\nimport { useTranslation } from \"react-i18next\";\nimport { classNames } from \"shared/lib/classNames/classNames\";\nimport { Button } from \"../Button/Button\";\nimport styles from \"./Code.module.scss\";\n\ninterface CodeProps {\n    className?: string;\n    text: string;\n}\n\nexport const Code = memo(({ className, text }: CodeProps) => {\n    const { t } = useTranslation();\n\n    return (\n        <pre className={classNames(styles.Code, {}, [className])}>\n            <Button className={styles.copyBtn}>{t(\"Копировать\")}</Button>\n            <code>{text}</code>\n        </pre>\n    );\n});\n"
+            "id": "2",
+            "title": "json-server 2",
+            "author": "typicode"
         },
         {
-          "id": "3",
-          "type": "TEXT",
-          "title": "Заголовок блока",
-          "paragraphs": [
-            "Реактивность, обычно, ассоциируется с фреймворками, но можно многому научиться, реализуя реактивность на чистом JS. Мы можем смешивать и играть с этими паттернами для лучшей обработки обновления данных."
-          ]
-        },
-        {
-          "id": "4",
-          "type": "IMAGE",
-          "src": "https://lh3.googleusercontent.com/rQiOXCi1evWhjOOOCaoM5hWmE3RUMbKqaqcV70Jf0VCAzH5pkAUsYcvRqFMzdNjg8UsJP9P0f9VYQ32eppTtTHo8YQ=w640-h400-e365-rj-sc0x00ffffff",
-          "title": "Изображение - скриншот сайта"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "paragraphs": [
-            "Реактивность, обычно, ассоциируется с фреймворками, но можно многому научиться, реализуя реактивность на чистом JS. Мы можем смешивать и играть с этими паттернами для лучшей обработки обновления данных.",
-            "Мы работаем с большим количеством JS на сайтах и в веб-приложениях, поскольку браузер — это полностью асинхронная среда. Мы должны реагировать на действия пользователя, взаимодействовать с сервером, отправлять отчеты, мониторить производительность и т.д. Это включает в себя обновление UI, сетевые запросы, изменения навигации и URL в браузере, что делает каскадное обновление данных ключевым аспектом веб-разработки."
-          ]
+            "id": "3",
+            "title": "json-server 3",
+            "author": "typicode"
         }
-      ]
-    }
-  ],
-  "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "123",
-      "role": "ADMIN",
-      "avatar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAM1BMVEXk5ueutLfn6eqrsbTp6+zg4uOwtrnJzc/j5earsbW0uby4vcDQ09XGyszU19jd3+G/xMamCvwDAAAFLklEQVR4nO2d2bLbIAxAbYE3sDH//7WFbPfexG4MiCAcnWmnrzkjIRaD2jQMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMw5wQkHJczewxZh2lhNK/CBOQo1n0JIT74/H/qMV0Z7GU3aCcVPuEE1XDCtVLAhgtpme7H0s1N1U7QjO0L8F7llzGeh1hEG/8Lo7TUmmuSrOfns9xnGXpXxsONPpA/B6OqqstjC6Ax/0ujkNdYQQbKNi2k64qiiEZ+ohi35X+2YcZw/WujmslYewiAliVYrxgJYrdwUmwXsU+RdApUi83oNIE27YvrfB/ZPg8+BJETXnqh9CVzBbTQHgojgiCvtqU9thFJg/CKz3VIMKMEkIXxIWqIpIg2SkjYj+xC816mrJae2aiWGykxRNsW0UwiJghJDljYI5CD8GRiCtIsJxizYUPQ2pzItZy5pcisTRdk/a9m4amtNNfBuQkdVhSaYqfpNTSFGfb9GRIakrE2Pm+GFLaCQPqiu0OpWP+HMPQQcgQMiQprWXNmsVwIjQjYi/ZrhAqNTCgr2gu0Jnz85RSSjso0HkMFZ0YZjKkc26a/jlmh9JiDyDxi9oeorTYAzZkwwoMz19pzj9bnH/GP/+qbchjSGflneWYhtTuKdMOmNKZcJ5TjInQKcYXnESd/jQxy0ENpULTNGOGgxpap/oyw9pbUAqhfx2Dbkhovvfgz4iUzoM9+GlK6/Mh4q29hyC1mwro30hpVVLPF9wYQr71RazOeM5/cw81iBRD+A03aM9/C/obbrKjbYSpCmIVG3qT/Q8oeUo3Rz0IL7vI1tEbCB9pSiu8I/aV8x3Kg/BGWrWp4ZVs0nZfmAoEG4h/61yHYIJiFSl6Q0Vk6tTW1N8kYp8hdOkfHYYMXd2Qft+8CYwqYDSKvqIh+MCF8Wgca2u/cwdgeW3TtuVn6+1oBs3yLo5C2JpK6CvQzGpfUkz9UG/87gCsi5o2LIXolxN0FbwAsjOLEr+YJmXn7iR6N0BCt5p5cMxm7eAsfS+/CACQf4CTpKjzgkvr2cVarVTf96372yut7XLJ1sa7lv6VcfgYrWaxqr3Wlo1S6pvStr22sxOtTNPLzdY3nj20bPP+ejFdJYkLsjGLdtPBEbe/mr2bQKiXWJDroA+vtzc0p9aahuwqHMDYrQEXHEw9jwQl3drMpts9JBU1SdktPe5FBRdJQ6bwXBpa57ib2A8kukQDzMjh++Uo7Fo6Wd02Pkf4fknqoo4HtvAIjsqUcjx6DIPgWCaOML9rKI/oqD9/lgNrn+eF+p7j8tnzHBiR7+kdUGw/+V1Kzkc75mMy6U+FMaxjPibiM1U1uGM+puInHpmALZCgP4pt7i840MV8+0R1zPsRB6UTcqpizncYwZ89syDydfyWCwXB1l8/zRNGWbTG/GHKUm9AkxHMc/EGSk3z2+ArEhPEV5TUBLEvUGFcjEUH80J/jveTGOAJEljJbILWGQT3zRYiwuKsUXN1EEJAzBhRJFll7mBUG7KD8EqPkKekBREaL8hMDZLQSG6AQjtHPYmvTQnX0TtpC1SYCe2YdkkyLP3jj5BSbKiuR585eQhTgoje6yIb0Yb0C+mV6EYvebqw5SDy2WmubogZiF2AVxPC2FpDf8H2Q9QWo6IkjUxTWVEI3WY/wrCeSuqJ+eRWzXR/JXwgVjUMozbCOfoEZiSiKVGepqv5CJ8RyR4D7xBeamqa7z3BJ/z17JxuBPdv93d/a2Ki878MMAzDMAzDMAzDMAzDMF/KP09VUmxBAiI3AAAAAElFTkSuQmCC"
-    },
-    {
-      "id": "2",
-      "username": "user",
-      "password": "456",
-      "role": "USER",
-      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/master/w_2560%2Cc_limit/security_hacker_names.jpg"
-    }
-  ],
-  "profile": [
-    {
-      "id": "1",
-      "firstname": "Maxim",
-      "lastname": "Mironov",
-      "age": 25,
-      "currency": "RUB",
-      "country": "Russia",
-      "city": "Tula",
-      "username": "admin",
-      "avatar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAM1BMVEXk5ueutLfn6eqrsbTp6+zg4uOwtrnJzc/j5earsbW0uby4vcDQ09XGyszU19jd3+G/xMamCvwDAAAFLklEQVR4nO2d2bLbIAxAbYE3sDH//7WFbPfexG4MiCAcnWmnrzkjIRaD2jQMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMw5wQkHJczewxZh2lhNK/CBOQo1n0JIT74/H/qMV0Z7GU3aCcVPuEE1XDCtVLAhgtpme7H0s1N1U7QjO0L8F7llzGeh1hEG/8Lo7TUmmuSrOfns9xnGXpXxsONPpA/B6OqqstjC6Ax/0ujkNdYQQbKNi2k64qiiEZ+ohi35X+2YcZw/WujmslYewiAliVYrxgJYrdwUmwXsU+RdApUi83oNIE27YvrfB/ZPg8+BJETXnqh9CVzBbTQHgojgiCvtqU9thFJg/CKz3VIMKMEkIXxIWqIpIg2SkjYj+xC816mrJae2aiWGykxRNsW0UwiJghJDljYI5CD8GRiCtIsJxizYUPQ2pzItZy5pcisTRdk/a9m4amtNNfBuQkdVhSaYqfpNTSFGfb9GRIakrE2Pm+GFLaCQPqiu0OpWP+HMPQQcgQMiQprWXNmsVwIjQjYi/ZrhAqNTCgr2gu0Jnz85RSSjso0HkMFZ0YZjKkc26a/jlmh9JiDyDxi9oeorTYAzZkwwoMz19pzj9bnH/GP/+qbchjSGflneWYhtTuKdMOmNKZcJ5TjInQKcYXnESd/jQxy0ENpULTNGOGgxpap/oyw9pbUAqhfx2Dbkhovvfgz4iUzoM9+GlK6/Mh4q29hyC1mwro30hpVVLPF9wYQr71RazOeM5/cw81iBRD+A03aM9/C/obbrKjbYSpCmIVG3qT/Q8oeUo3Rz0IL7vI1tEbCB9pSiu8I/aV8x3Kg/BGWrWp4ZVs0nZfmAoEG4h/61yHYIJiFSl6Q0Vk6tTW1N8kYp8hdOkfHYYMXd2Qft+8CYwqYDSKvqIh+MCF8Wgca2u/cwdgeW3TtuVn6+1oBs3yLo5C2JpK6CvQzGpfUkz9UG/87gCsi5o2LIXolxN0FbwAsjOLEr+YJmXn7iR6N0BCt5p5cMxm7eAsfS+/CACQf4CTpKjzgkvr2cVarVTf96372yut7XLJ1sa7lv6VcfgYrWaxqr3Wlo1S6pvStr22sxOtTNPLzdY3nj20bPP+ejFdJYkLsjGLdtPBEbe/mr2bQKiXWJDroA+vtzc0p9aahuwqHMDYrQEXHEw9jwQl3drMpts9JBU1SdktPe5FBRdJQ6bwXBpa57ib2A8kukQDzMjh++Uo7Fo6Wd02Pkf4fknqoo4HtvAIjsqUcjx6DIPgWCaOML9rKI/oqD9/lgNrn+eF+p7j8tnzHBiR7+kdUGw/+V1Kzkc75mMy6U+FMaxjPibiM1U1uGM+puInHpmALZCgP4pt7i840MV8+0R1zPsRB6UTcqpizncYwZ89syDydfyWCwXB1l8/zRNGWbTG/GHKUm9AkxHMc/EGSk3z2+ArEhPEV5TUBLEvUGFcjEUH80J/jveTGOAJEljJbILWGQT3zRYiwuKsUXN1EEJAzBhRJFll7mBUG7KD8EqPkKekBREaL8hMDZLQSG6AQjtHPYmvTQnX0TtpC1SYCe2YdkkyLP3jj5BSbKiuR585eQhTgoje6yIb0Yb0C+mV6EYvebqw5SDy2WmubogZiF2AVxPC2FpDf8H2Q9QWo6IkjUxTWVEI3WY/wrCeSuqJ+eRWzXR/JXwgVjUMozbCOfoEZiSiKVGepqv5CJ8RyR4D7xBeamqa7z3BJ/z17JxuBPdv93d/a2Ki878MMAzDMAzDMAzDMAzDMF/KP09VUmxBAiI3AAAAAElFTkSuQmCC"
-    },
-    {
-      "id": "2",
-      "firstname": "Максим",
-      "lastname": "М",
-      "age": 25,
-      "currency": "USD",
-      "country": "Russia",
-      "city": "Tula",
-      "username": "user",
-      "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/master/w_2560%2Cc_limit/security_hacker_names.jpg"
-    }
-  ]
+    ],
+    "comments": [
+        {
+            "id": "1",
+            "text": "some comment",
+            "articleId": "1",
+            "userId": "1"
+        },
+        {
+            "id": "2",
+            "text": "some comment 2",
+            "articleId": "1",
+            "userId": "1"
+        },
+        {
+            "id": "3",
+            "text": "some comment 3",
+            "articleId": "1",
+            "userId": "1"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "Hello world!",
+            "id": "aX_876o"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "Комментарий к статье",
+            "id": "dK2wbLn"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "Хорошая статья! ",
+            "id": "gE3x2iy"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "Что думаете по поводу этой темы? Полностью ли раскрыта тема? А вы любите JavaScript? Мое мнение, например, ... Длинный текст для просмотра как будет он отображаться.",
+            "id": "JMeg5Xb"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "Всем привет!",
+            "id": "bxnNLb4"
+        }
+    ],
+    "articles": [
+        {
+            "id": "1",
+            "title": "JavaScript News",
+            "subtittle": "Что нового в JS за 2023 год?",
+            "img": "https://lh3.googleusercontent.com/rQiOXCi1evWhjOOOCaoM5hWmE3RUMbKqaqcV70Jf0VCAzH5pkAUsYcvRqFMzdNjg8UsJP9P0f9VYQ32eppTtTHo8YQ=w640-h400-e365-rj-sc0x00ffffff",
+            "views": 2566,
+            "createdAt": "30.08.2023",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Реактивность — это то, как системы реагируют на обновление данных. Существуют разные типы реактивности, но в рамках этой статьи, реактивность — это когда мы что-то делаем в ответ на изменение данных.",
+                        "Мы работаем с большим количеством JS на сайтах и в веб-приложениях, поскольку браузер — это полностью асинхронная среда. Мы должны реагировать на действия пользователя, взаимодействовать с сервером, отправлять отчеты, мониторить производительность и т.д. Это включает в себя обновление UI, сетевые запросы, изменения навигации и URL в браузере, что делает каскадное обновление данных ключевым аспектом веб-разработки.",
+                        "Реактивность, обычно, ассоциируется с фреймворками, но можно многому научиться, реализуя реактивность на чистом JS. Мы можем смешивать и играть с этими паттернами для лучшей обработки обновления данных."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "CODE",
+                    "code": "import { memo } from \"react\";\nimport { useTranslation } from \"react-i18next\";\nimport { classNames } from \"shared/lib/classNames/classNames\";\nimport { Button } from \"../Button/Button\";\nimport styles from \"./Code.module.scss\";\n\ninterface CodeProps {\n    className?: string;\n    text: string;\n}\n\nexport const Code = memo(({ className, text }: CodeProps) => {\n    const { t } = useTranslation();\n\n    return (\n        <pre className={classNames(styles.Code, {}, [className])}>\n            <Button className={styles.copyBtn}>{t(\"Копировать\")}</Button>\n            <code>{text}</code>\n        </pre>\n    );\n});\n"
+                },
+                {
+                    "id": "3",
+                    "type": "TEXT",
+                    "title": "Заголовок блока",
+                    "paragraphs": [
+                        "Реактивность, обычно, ассоциируется с фреймворками, но можно многому научиться, реализуя реактивность на чистом JS. Мы можем смешивать и играть с этими паттернами для лучшей обработки обновления данных."
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "IMAGE",
+                    "src": "https://lh3.googleusercontent.com/rQiOXCi1evWhjOOOCaoM5hWmE3RUMbKqaqcV70Jf0VCAzH5pkAUsYcvRqFMzdNjg8UsJP9P0f9VYQ32eppTtTHo8YQ=w640-h400-e365-rj-sc0x00ffffff",
+                    "title": "Изображение - скриншот сайта"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "paragraphs": [
+                        "Реактивность, обычно, ассоциируется с фреймворками, но можно многому научиться, реализуя реактивность на чистом JS. Мы можем смешивать и играть с этими паттернами для лучшей обработки обновления данных.",
+                        "Мы работаем с большим количеством JS на сайтах и в веб-приложениях, поскольку браузер — это полностью асинхронная среда. Мы должны реагировать на действия пользователя, взаимодействовать с сервером, отправлять отчеты, мониторить производительность и т.д. Это включает в себя обновление UI, сетевые запросы, изменения навигации и URL в браузере, что делает каскадное обновление данных ключевым аспектом веб-разработки."
+                    ]
+                }
+            ]
+        }
+    ],
+    "users": [
+        {
+            "id": "1",
+            "username": "admin",
+            "password": "123",
+            "role": "ADMIN",
+            "avatar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAM1BMVEXk5ueutLfn6eqrsbTp6+zg4uOwtrnJzc/j5earsbW0uby4vcDQ09XGyszU19jd3+G/xMamCvwDAAAFLklEQVR4nO2d2bLbIAxAbYE3sDH//7WFbPfexG4MiCAcnWmnrzkjIRaD2jQMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMw5wQkHJczewxZh2lhNK/CBOQo1n0JIT74/H/qMV0Z7GU3aCcVPuEE1XDCtVLAhgtpme7H0s1N1U7QjO0L8F7llzGeh1hEG/8Lo7TUmmuSrOfns9xnGXpXxsONPpA/B6OqqstjC6Ax/0ujkNdYQQbKNi2k64qiiEZ+ohi35X+2YcZw/WujmslYewiAliVYrxgJYrdwUmwXsU+RdApUi83oNIE27YvrfB/ZPg8+BJETXnqh9CVzBbTQHgojgiCvtqU9thFJg/CKz3VIMKMEkIXxIWqIpIg2SkjYj+xC816mrJae2aiWGykxRNsW0UwiJghJDljYI5CD8GRiCtIsJxizYUPQ2pzItZy5pcisTRdk/a9m4amtNNfBuQkdVhSaYqfpNTSFGfb9GRIakrE2Pm+GFLaCQPqiu0OpWP+HMPQQcgQMiQprWXNmsVwIjQjYi/ZrhAqNTCgr2gu0Jnz85RSSjso0HkMFZ0YZjKkc26a/jlmh9JiDyDxi9oeorTYAzZkwwoMz19pzj9bnH/GP/+qbchjSGflneWYhtTuKdMOmNKZcJ5TjInQKcYXnESd/jQxy0ENpULTNGOGgxpap/oyw9pbUAqhfx2Dbkhovvfgz4iUzoM9+GlK6/Mh4q29hyC1mwro30hpVVLPF9wYQr71RazOeM5/cw81iBRD+A03aM9/C/obbrKjbYSpCmIVG3qT/Q8oeUo3Rz0IL7vI1tEbCB9pSiu8I/aV8x3Kg/BGWrWp4ZVs0nZfmAoEG4h/61yHYIJiFSl6Q0Vk6tTW1N8kYp8hdOkfHYYMXd2Qft+8CYwqYDSKvqIh+MCF8Wgca2u/cwdgeW3TtuVn6+1oBs3yLo5C2JpK6CvQzGpfUkz9UG/87gCsi5o2LIXolxN0FbwAsjOLEr+YJmXn7iR6N0BCt5p5cMxm7eAsfS+/CACQf4CTpKjzgkvr2cVarVTf96372yut7XLJ1sa7lv6VcfgYrWaxqr3Wlo1S6pvStr22sxOtTNPLzdY3nj20bPP+ejFdJYkLsjGLdtPBEbe/mr2bQKiXWJDroA+vtzc0p9aahuwqHMDYrQEXHEw9jwQl3drMpts9JBU1SdktPe5FBRdJQ6bwXBpa57ib2A8kukQDzMjh++Uo7Fo6Wd02Pkf4fknqoo4HtvAIjsqUcjx6DIPgWCaOML9rKI/oqD9/lgNrn+eF+p7j8tnzHBiR7+kdUGw/+V1Kzkc75mMy6U+FMaxjPibiM1U1uGM+puInHpmALZCgP4pt7i840MV8+0R1zPsRB6UTcqpizncYwZ89syDydfyWCwXB1l8/zRNGWbTG/GHKUm9AkxHMc/EGSk3z2+ArEhPEV5TUBLEvUGFcjEUH80J/jveTGOAJEljJbILWGQT3zRYiwuKsUXN1EEJAzBhRJFll7mBUG7KD8EqPkKekBREaL8hMDZLQSG6AQjtHPYmvTQnX0TtpC1SYCe2YdkkyLP3jj5BSbKiuR585eQhTgoje6yIb0Yb0C+mV6EYvebqw5SDy2WmubogZiF2AVxPC2FpDf8H2Q9QWo6IkjUxTWVEI3WY/wrCeSuqJ+eRWzXR/JXwgVjUMozbCOfoEZiSiKVGepqv5CJ8RyR4D7xBeamqa7z3BJ/z17JxuBPdv93d/a2Ki878MMAzDMAzDMAzDMAzDMF/KP09VUmxBAiI3AAAAAElFTkSuQmCC"
+        },
+        {
+            "id": "2",
+            "username": "user",
+            "password": "456",
+            "role": "USER",
+            "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/master/w_2560%2Cc_limit/security_hacker_names.jpg"
+        }
+    ],
+    "profile": [
+        {
+            "id": "1",
+            "firstname": "Maxim",
+            "lastname": "Mironov",
+            "age": 25,
+            "currency": "RUB",
+            "country": "Russia",
+            "city": "Tula",
+            "username": "admin",
+            "avatar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAM1BMVEXk5ueutLfn6eqrsbTp6+zg4uOwtrnJzc/j5earsbW0uby4vcDQ09XGyszU19jd3+G/xMamCvwDAAAFLklEQVR4nO2d2bLbIAxAbYE3sDH//7WFbPfexG4MiCAcnWmnrzkjIRaD2jQMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMw5wQkHJczewxZh2lhNK/CBOQo1n0JIT74/H/qMV0Z7GU3aCcVPuEE1XDCtVLAhgtpme7H0s1N1U7QjO0L8F7llzGeh1hEG/8Lo7TUmmuSrOfns9xnGXpXxsONPpA/B6OqqstjC6Ax/0ujkNdYQQbKNi2k64qiiEZ+ohi35X+2YcZw/WujmslYewiAliVYrxgJYrdwUmwXsU+RdApUi83oNIE27YvrfB/ZPg8+BJETXnqh9CVzBbTQHgojgiCvtqU9thFJg/CKz3VIMKMEkIXxIWqIpIg2SkjYj+xC816mrJae2aiWGykxRNsW0UwiJghJDljYI5CD8GRiCtIsJxizYUPQ2pzItZy5pcisTRdk/a9m4amtNNfBuQkdVhSaYqfpNTSFGfb9GRIakrE2Pm+GFLaCQPqiu0OpWP+HMPQQcgQMiQprWXNmsVwIjQjYi/ZrhAqNTCgr2gu0Jnz85RSSjso0HkMFZ0YZjKkc26a/jlmh9JiDyDxi9oeorTYAzZkwwoMz19pzj9bnH/GP/+qbchjSGflneWYhtTuKdMOmNKZcJ5TjInQKcYXnESd/jQxy0ENpULTNGOGgxpap/oyw9pbUAqhfx2Dbkhovvfgz4iUzoM9+GlK6/Mh4q29hyC1mwro30hpVVLPF9wYQr71RazOeM5/cw81iBRD+A03aM9/C/obbrKjbYSpCmIVG3qT/Q8oeUo3Rz0IL7vI1tEbCB9pSiu8I/aV8x3Kg/BGWrWp4ZVs0nZfmAoEG4h/61yHYIJiFSl6Q0Vk6tTW1N8kYp8hdOkfHYYMXd2Qft+8CYwqYDSKvqIh+MCF8Wgca2u/cwdgeW3TtuVn6+1oBs3yLo5C2JpK6CvQzGpfUkz9UG/87gCsi5o2LIXolxN0FbwAsjOLEr+YJmXn7iR6N0BCt5p5cMxm7eAsfS+/CACQf4CTpKjzgkvr2cVarVTf96372yut7XLJ1sa7lv6VcfgYrWaxqr3Wlo1S6pvStr22sxOtTNPLzdY3nj20bPP+ejFdJYkLsjGLdtPBEbe/mr2bQKiXWJDroA+vtzc0p9aahuwqHMDYrQEXHEw9jwQl3drMpts9JBU1SdktPe5FBRdJQ6bwXBpa57ib2A8kukQDzMjh++Uo7Fo6Wd02Pkf4fknqoo4HtvAIjsqUcjx6DIPgWCaOML9rKI/oqD9/lgNrn+eF+p7j8tnzHBiR7+kdUGw/+V1Kzkc75mMy6U+FMaxjPibiM1U1uGM+puInHpmALZCgP4pt7i840MV8+0R1zPsRB6UTcqpizncYwZ89syDydfyWCwXB1l8/zRNGWbTG/GHKUm9AkxHMc/EGSk3z2+ArEhPEV5TUBLEvUGFcjEUH80J/jveTGOAJEljJbILWGQT3zRYiwuKsUXN1EEJAzBhRJFll7mBUG7KD8EqPkKekBREaL8hMDZLQSG6AQjtHPYmvTQnX0TtpC1SYCe2YdkkyLP3jj5BSbKiuR585eQhTgoje6yIb0Yb0C+mV6EYvebqw5SDy2WmubogZiF2AVxPC2FpDf8H2Q9QWo6IkjUxTWVEI3WY/wrCeSuqJ+eRWzXR/JXwgVjUMozbCOfoEZiSiKVGepqv5CJ8RyR4D7xBeamqa7z3BJ/z17JxuBPdv93d/a2Ki878MMAzDMAzDMAzDMAzDMF/KP09VUmxBAiI3AAAAAElFTkSuQmCC"
+        },
+        {
+            "id": "2",
+            "firstname": "Максим",
+            "lastname": "М",
+            "age": 25,
+            "currency": "USD",
+            "country": "Russia",
+            "city": "Tula",
+            "username": "user",
+            "avatar": "https://media.wired.com/photos/644318b17b25a434b1f3bbd7/master/w_2560%2Cc_limit/security_hacker_names.jpg"
+        }
+    ]
 }
