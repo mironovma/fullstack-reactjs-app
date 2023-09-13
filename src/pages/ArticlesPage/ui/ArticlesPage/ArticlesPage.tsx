@@ -3,6 +3,7 @@ import {
     ArticleView,
     ArticleViewSelector,
 } from "entities/Article";
+import { fetchNextArticlePage } from "pages/ArticlesPage/model/services/fetchNextArticlePage/fetchNextArticlePage";
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -12,6 +13,7 @@ import {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
+import { Page } from "shared/ui/Page/Page";
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
@@ -48,21 +50,36 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
         [dispatch]
     );
 
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlePage());
+    }, [dispatch]);
+
     useInitialEffect(() => {
-        dispatch(fetchArticleList());
         dispatch(articlesPageActions.initState());
+        dispatch(
+            fetchArticleList({
+                page: 1,
+            })
+        );
     });
+
+    if (error) {
+        return <>ERROR. Обработку ошибок ArticlesPage.tsx изменить</>;
+    }
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(styles.ArticlesPage, {}, [className])}>
+            <Page
+                onScrollEnd={onLoadNextPart}
+                className={classNames(styles.ArticlesPage, {}, [className])}
+            >
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
                 <ArticleList
                     isLoading={isLoading}
                     view={view}
                     articles={articles}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
