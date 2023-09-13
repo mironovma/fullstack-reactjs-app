@@ -25,12 +25,17 @@ export const articlesPageSlice = createSlice({
         view: ArticleView.SMALL,
         ids: [],
         entities: {},
+        page: 1,
+        hasMore: true,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
             state.view = action.payload;
             // При переключении view сохраняем это в local storage
             localStorage.setItem(ARTICLE_VIEW_LOCALSTORAGE_KEY, action.payload);
+        },
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload;
         },
         initState: (state) => {
             /**
@@ -42,9 +47,11 @@ export const articlesPageSlice = createSlice({
              * берется либо значение из стейта либо (условие ИЛИ ||) инициализируется по дефолту
              * как tiled
              */
-            state.view = localStorage.getItem(
+            const view = localStorage.getItem(
                 ARTICLE_VIEW_LOCALSTORAGE_KEY
             ) as ArticleView;
+            state.view = view;
+            state.limit = view === ArticleView.BIG ? 4 : 9;
         },
     },
     extraReducers: (builder) => {
@@ -57,7 +64,8 @@ export const articlesPageSlice = createSlice({
                 fetchArticleList.fulfilled,
                 (state, action: PayloadAction<Article[]>) => {
                     state.isLoading = false;
-                    articlesAdapted.setAll(state, action.payload);
+                    articlesAdapted.addMany(state, action.payload);
+                    state.hasMore = action.payload.length > 0;
                 }
             )
             .addCase(fetchArticleList.rejected, (state, action) => {

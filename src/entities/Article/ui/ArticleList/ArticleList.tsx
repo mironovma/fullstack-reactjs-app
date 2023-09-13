@@ -1,10 +1,9 @@
 import { memo } from "react";
-import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
-import styles from "./ArticleList.module.scss";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
+import styles from "./ArticleList.module.scss";
 
 interface ArticleListProps {
     className?: string;
@@ -32,21 +31,6 @@ export const ArticleList = memo(
         isLoading,
         view = ArticleView.SMALL,
     }: ArticleListProps) => {
-        const { t } = useTranslation();
-
-        if (isLoading) {
-            return (
-                <div
-                    className={classNames(styles.ArticleList, {}, [
-                        className,
-                        styles[view],
-                    ])}
-                >
-                    {getSkeletons(view)}
-                </div>
-            );
-        }
-
         const renderArticles = (article: Article) => {
             return (
                 <ArticleListItem
@@ -65,9 +49,8 @@ export const ArticleList = memo(
                     styles[view],
                 ])}
             >
-                {articles.length > 0
-                    ? articles.map(renderArticles)
-                    : t("Статьи не найдены или произошла ошибка")}
+                {articles.length > 0 ? articles.map(renderArticles) : null}
+                {isLoading && getSkeletons(view)}
             </div>
         );
     }

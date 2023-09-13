@@ -14,6 +14,7 @@ import {
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 import { Button } from "shared/ui/Button/Button";
+import { Page } from "shared/ui/Page/Page";
 import { Text } from "shared/ui/Text/Text";
 import {
     // getArticleCommentsError,
@@ -66,19 +67,19 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div
+            <Page
                 className={classNames(styles.ArticleDetailsPage, {}, [
                     className,
                 ])}
             >
                 {t("Такой статьи не существует или что-то пошло не так.")}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div
+            <Page
                 className={classNames(styles.ArticleDetailsPage, {}, [
                     className,
                 ])}
@@ -94,7 +95,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
