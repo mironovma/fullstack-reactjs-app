@@ -10,6 +10,9 @@ export default (env: BuildEnv) => {
         html: path.resolve(__dirname, "public", "index.html"),
         src: path.resolve(__dirname, "src"),
     };
+    /**
+     * renaming
+     */
 
     const mode = env.mode || "development";
     const PORT = env.port || 3000;
